@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>I Don't Like</title>
+	<link rel="stylesheet"  href="css/jquery.mobile.min.css">
+	<link rel="stylesheet" href="css/leaflet.css" />
+	<script src="js/jquery.js"></script>
+<script src="js/map.js"></script>
+<script src="js/jquery.mobile.min.js"></script>
+<script src="js/leaflet.js"></script>
+<script src="js/app.js"></script>
+<script src="phonegap.js"></script>
+<script src="barcodescanner.js"></script>
+<style>
+		#homeBanner {
+			width: 100%;
+		}
+		.center {
+			text-align: center;
+			margin-left: auto;
+			margin-right:auto;
+		}
+		.banner {
+			display:block;
+			width: 100%;
+		}
+		#qrcode {
+			display:block;	
+			margin-left: auto;
+			margin-right:auto;
+		}
+		#map2 {
+			margin-left: auto;
+			margin-right:auto;
+			width: 320px;
+			height: 320px;  
+		}
+	</style>
+</head>
+	
+<body><div id="homeScreen" data-role="page">
+	<img name="Banner" src="imgs/Banner.png" width="320" height="201" alt="">
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" class="ui-nodisc-icon ui-alt-icon">
+			<li><a href="#foods" data-transition="flow">Foods</a></li>
+			<li><a href="#recipies" data-transition="flow">Recipies</a></li>
+			<li><a href="#sources" data-transition="flow">Sources</a></li>
+
+		</ul>
+		<div class="ui-grid-a center">
+    		<div class="ui-block-a">
+				<a href="#aboutScreen" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="flow">Info</a>
+			</div>
+    		<div class="ui-block-b">
+				<a href="#mapScreen" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon" data-transition="flow">Map</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="foods" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+	<div data-role="content">
+		<h1 class="center">Foods</h1>
+		<ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+			<li><a href="#proteins" data-transition="flow"><img src="imgs/Meat-Icon.jpg">
+				<h2>Proteins</h2></a>
+			</li>
+			<li><a href="#produce" data-transition="flow"><img src="imgs/produce-icon.jpg">
+			<h2>Fruits &amp; Veggies</h2></a>
+			</li>
+			<li><a href="#dairy" data-transition="flow"><img src="imgs/Dairy-Icon.jpg">
+			<h2>Cheese &amp; Dairy</h2></a>
+			</li>
+			<li><a href="#" data-transition="flow"><img src="imgs/international.jpg">
+			<h2>International Foods</h2></a>
+			</li>
+			<li><a href="#" data-transition="flow"><img src="imgs/WhiteBread.jpeg" width="207" height="197">
+			<h2>Breads &amp; Carbs</h2></a>
+			</li>
+	</div>
+</div>
+
+<div id="recipies" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+	<div data-role="content">
+		<h1 class="center">Recipies</h1>
+		<ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+			<li><a href="#Cheeseburger" data-transition="flow"><img src="imgs/cheesburger.jpg">
+				<h2>Cheeseburger Salad</h2>
+				<p> </p></a>
+			</li>
+			<li><a href="#mac" data-transition="flow"><img src="imgs/mac.jpg">
+				<h2>Cafeteria Mac &amp; Cheese</h2>
+				<p> </p></a>
+			</li>
+           <li><a href="#nugget" data-transition="flow"><img src="imgs/nuggets.jpg">
+				<h2>Baked Chicken Nuggets</h2>
+				<p> </p></a>
+			</li>
+			<li><a href="#broccoli" data-transition="flow"><img src="imgs/broccoli.jpg">
+				<h2>Grilled Broccoli</h2>
+				<p> </p></a>
+			</li>
+            <li><a href="#apple" data-transition="flow"><img src="imgs/apple.jpg">
+				<h2>Apple Toast</h2>
+				<p> </p></a>
+			</li>
+		</ul>
+	</div>
+</div>
+	
+<div id="mapScreen" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+	<div data-role="content">
+		<h2 class="center">2014 Coyote Ridge Elementary Invention Convention</h2>
+		<div id="map">
+		  <div align="center">
+		    <p><img src="imgs/coyote.png" /></p>
+		    <h3>We are THINKERS!</h3>
+		  </div>
+		</div>
+	</div>
+</div>
+
+<div id="sources" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+	<div data-role="content">
+		<h2 class="center">Recipe Sources</h2>
+		<a href="http://www.allrecipies.com" data-transition="flow"><img src="imgs/allrecipies.jpg">
+				<p> </p></a>
+			
+		</div>
+	</div>
+</div>
+
+<div id="aboutScreen" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+	<div data-role="content">
+		<h2 class="center">Created by</h2>
+		<h3 class="center">Abby Pritchard</h3>
+		<img class="center banner" src="imgs/Abby.png" />
+		<p class="center">pinkpritchard@gmail.com</p>
+	</div>
+</div>
+
+<div id="proteins" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#foods" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+	<div data-role="content">
+		<h1 class="center">Proteins</h1>
+		<ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+			<li><a href="#nuggets"><img src="imgs/chicken.png">
+				<h2>Chicken</h2>
+				<p> </p></a>
+			</li>
+			<li><a href="#cheeseburger"><img src="imgs/steak.jpg" width="130">
+				<h2>Beef</h2>
+				<p> </p></a>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+
+<div id="produce" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#foods" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+	<div data-role="content">
+		<h1 class="center">Fruits &amp; Veggies</h1>
+		<ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+			<li><a href="#broccoli" data-transition="flow"><img src="imgs/broccli.jpg" width="181" height="196">
+				<h2>Broccoli</h2>
+				<p> </p></a>
+			</li>
+			<li><a href="#apple" data-transition="flow"><img src="imgs/apple.png" height="165">
+				<h2>Apple</h2>
+				<p> </p></a>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+
+<div id="dairy" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#foods" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+	<div data-role="content">
+		<h1 class="center">Cheese & Dairy</h1>
+		<ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+			<li><a href="#mac" data-transition="flow"><img src="imgs/cheese.gif" width="143" height="151">
+				<h2>Chedder Cheese</h2>
+				<p> </p></a>
+			</li>
+			<li><a href="#" data-transition="flow"><img src="imgs/yogurt.png">
+				<h2>Plain Yogurt</h2>
+				<p> </p></a>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+
+<div id="nuggets" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#proteins" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+  <div data-role="content">
+	<h1 class="center">Baked Chicken Nuggets</h1>
+	<p><img src="imgs/nuggets.jpg"</p>
+    <ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+      <p>Ingredients</p>
+	    <p>
+	    <li>3 skinless, boneless chicken breasts</li>
+	    <li>1 cup Italian seasoned bread crumbs</li>
+	    <li>1/2 cup grated Parmesan cheese</li>
+	    <li>1 teaspoon salt</li>
+	    <li>1 teaspoon dried thyme</li>
+	    <li>1 tablespoon dried basil</li>
+	    <li>1/2 cup butter, melted</li>
+	    </p>
+	    <p>Directions </p>
+    </ul>
+	  <ol>
+	    <li>Preheat oven to 400 degrees F (200 degrees C).</li>
+	    <li>Cut chicken breasts into 1 1/2-inch sized pieces. In a medium bowl, mix<br>
+	      together the bread crumbs, cheese, salt, thyme and basil. Mix well. Put<br>
+        melted butter in a bowl or dish for dipping.</li>
+	    <li>Dip chicken pieces into the melted butter first, then coat with the<br>
+	      breadcrumb mixture. Place the well-coated chicken pieces on a lightly<br>
+	      greased cookie sheet in a single layer, and bake in the preheated oven for<br>
+        20 minutes.</li>
+    </ol>
+    </div>
+</div>
+
+<div id="cheeseburger" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#proteins" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+  <div data-role="content">
+	<h1 class="center">Cheeseburger Salad</h1>
+	<p><img src="imgs/cheesburger.jpg"</p>
+    <ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+      <p>Ingredients</p>
+	    <p><li>2 hamburger buns, split and<br>
+	      cut into 3/4 inch strips*</li>
+	    <li>1/2 small red onion, chopped</li>
+	    <li>1 pound lean ground beef</li>
+	    <li>1 cup ketchup</li>
+	    <li>1/2 cup finely chopped dill pickle</li>
+	    <li>1 tablespoon prepared yellow mustard</li>
+	    <li>1/2 small red onion, sliced</li>
+	    <li>8 cups chopped lettuce</li>
+	    <li>2 plum tomatoes, chopped</li>
+	    <li>1 cup shredded Cheddar cheese</li>
+	    </p>
+	    <p>Directions </p>
+    </ul>
+	  <ol>
+	    <li>Preheat an oven to 425 degrees F (220 degrees C).</li>
+	    <li>Arrange the strips in a single layer on a baking sheet, and bake for 8 to 10<br>
+        minutes, until the strips are lightly toasted. Set the strips aside.</li>
+	    <li>Place the ground beef into a skillet over medium heat, and brown the meat<br>
+	      for about 10 to 12 minutes, breaking the beef apart as it cooks, until the<br>
+	      meat is well browned and no longer pink inside. Stir the chopped onion,<br>
+        ketchup, dill pickle, and mustard into the beef mixture and mix well.</li>
+	    <li>Arrange the chopped lettuce on a large serving platter, and spoon the beef<br>
+	      mixture over the lettuce. Top the salad with the sliced onion, plum<br>
+	      tomatoes, and shredded cheese, and arrange the hamburger bun croutons<br>
+        around the platter.</li>
+    </ol>
+    </div>
+</div>
+
+<div id="broccoli" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#produce" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+  <div data-role="content">
+	<h1 class="center">Grilled Broccoli</h1>
+	<p><img src="imgs/broccoli.jpg"</p>
+    <ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+      <p>Ingredients</p>
+	    <p>
+	    <li>2 heads broccoli, cut into large florets</li>
+	    <li>1 (16 fl oz) bottle balsamic vinaigrette salad dressing (such as Kraft®)</li>
+	    </p>
+	    <p>Directions </p>
+    </ul>
+	  <ol>
+	    <li>Place broccoli and salad dressing in a large resealable plastic bag, squeeze<br>
+	      out excess air, and seal the bag. Marinate in the refrigerator for 8 hours,<br>
+        turning bag occasionally.</li>
+	    <li>Preheat an outdoor grill for high heat and lightly oil the grate. Drain<br>
+        broccoli.</li>
+	    <li>Grill broccoli on preheated grill until vegetables are tender and browned,<br>
+        turning occasionally, 5 to 7 minutes.</li>
+    </ol>
+    </div>
+</div>
+
+<div id="mac" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#dairy" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+  <div data-role="content">
+	<h1 class="center">Cafeteria Mac & Cheese</h1>
+	<p><img src="imgs/mac.jpg"</p>
+    <ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+      <p>Ingredients</p>
+	    <p>
+	    <li>8 ounces macaroni</li>
+	    <li>1 1/2 cups milk</li>
+	    <li>1 1/2 teaspoons ground mustard</li>
+	    <li>1 teaspoon Worcestershire sauce</li>
+	    <li>3/4 teaspoon salt</li>
+	    <li>1 dash hot pepper sauce</li>
+	    <li>1 1/2 tablespoons butter</li>
+	    <li>3 1/2 cups shredded Cheddar cheese, divided</li>
+	    <li>1/2 cup bread crumbs</li>
+	    <li>2 tablespoons butter, melted</li>
+	    <li>1/2 teaspoon paprika</li>
+	    </p>
+	    <p>Directions </p>
+    </ul>
+	  <ol>
+	    <li>Preheat oven to 350 degrees F (175 degrees C). Grease a 2 quart casserole<br>
+        dish.</li>
+	    <li>Bring a large pot of lightly salted water to a boil. Add macaroni and cook for<br>
+        8 to 10 minutes or until al dente; drain.</li>
+	    <li>Heat the milk in a small saucepan. Stir in mustard, Worcestershire sauce,<br>
+        salt, and hot sauce. Set aside.</li>
+	    <li>Stir 1 1/2 tablespoons butter and 3 cups cheese into the drained macaroni.<br>
+	      Pour the hot milk mixture over the cheese and macaroni. Transfer to<br>
+	      prepared baking dish. Sprinkle remaining 1/2 cup cheddar on top. Combine<br>
+	      the bread crumbs with the melted butter, and spread over the top. Sprinkle<br>
+	      with paprika.</li>
+	    <li>Bake in preheated</li>
+    </ol>
+    </div>
+</div>
+
+<div id="apple" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>I Don't Like</h1>
+		<a href="#produce" class="ui-btn ui-icon-arrow-l ui-btn-icon-left" data-transition="flow">Back</a>
+	</header>
+  <div data-role="content">
+	<h1 class="center">Apple Toast</h1>
+	<p><img src="imgs/apple.jpg"</p>
+    <ul data-role="listview" data-inset="false" class="ui-nodisc-icon ui-alt-icon">
+      <p>Ingredients</p>
+	    <p>
+	    <li>1 tablespoon butter</li>
+	    <li>4 slices white or whole wheat bread</li>
+	    <li>1 tablespoon cinnamon</li>
+	    <li>1 large apple, cored and thinly sliced</li>
+	    </p>
+	    <p>Directions </p>
+    </ul>
+	  <ol>
+	    <li>Set oven to broil.</li>
+	    <li>Spread butter on one side of each slice of bread. Place apple slices on buttered side of bread. Sprinkle cinnamon on top. Place bread on a baking sheet.</li>
+	    <li>Place in a preheated oven until toasted, about 2 minutes.</li>
+    </ol>
+    </div>
+</div>
+	<!--
+	Admission
+	Directions
+	Parking
+	Hours
+	Volunteer
+	-->
+</body>
+</html>
